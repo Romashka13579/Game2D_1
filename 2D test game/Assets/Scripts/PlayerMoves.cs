@@ -114,4 +114,8 @@ public class PlayerMoves : MonoBehaviour
         RaycastHit2D raycastHit = Physics2D.BoxCast(boxCollider.bounds.center, boxCollider.bounds.size, 0, new Vector2(transform.localScale.x, 0), 0.1f, wallLayer); // center point of BoxCast , size, angle, direction, distance, check the layer of the ground, not enemies or oyher things 
         return raycastHit.collider != null;
     }
+    public bool canAttack()
+    {
+        return isGrounded() && !onWall();
+    }
 }
