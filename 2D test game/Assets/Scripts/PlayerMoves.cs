@@ -116,6 +116,6 @@ public class PlayerMoves : MonoBehaviour
     }
     public bool canAttack()
     {
-        return isGrounded() && !onWall();
+        return horizontalInput == 0 && isGrounded() && !onWall();
     }
 }

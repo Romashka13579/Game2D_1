@@ -33,11 +33,22 @@ public class Shoot : MonoBehaviour
         boxCollider.enabled = false;
         animation.SetTrigger("explode");
     }
-    private void SetDirection(float _direction)
+    public void SetDirection(float _direction)
     {
         direction = _direction;
         gameObject.SetActive(true);
         hit = false;
         boxCollider.enabled = true;
+
+        float localScaleX = transform.localScale.x;
+        if (Mathf.Sign(localScaleX) != _direction)
+        {
+            localScaleX = -localScaleX;
+        }
+        transform.localScale = new Vector3(localScaleX, transform.localScale.y, transform.localScale.z);
+    }
+    private void Deactivate()
+    {
+        gameObject.SetActive(false);
     }
 }
