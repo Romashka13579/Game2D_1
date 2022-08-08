@@ -1,0 +1,4 @@
+NullReferenceException: Object reference not set to an instance of an object
+Shoot.SetDirection (System.Single _direction) (at Assets/Scripts/Shoot.cs:41)
+PlayerAttack.Attack () (at Assets/Scripts/PlayerAttack.cs:38)
+PlayerAttack.Update () (at Assets/Scripts/PlayerAttack.cs:27)
